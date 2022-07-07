@@ -1,8 +1,20 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import type { AppProps } from "next/app";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+import { ChakraProvider } from "@chakra-ui/react";
+
+import theme from "../theme/theme";
+
+import "@egjs/flicking-plugins/dist/pagination.css";
+import "@egjs/flicking/dist/flicking.css";
+import "@egjs/flicking-plugins/dist/flicking-plugins.css";
+import "../styles/styles.css";
+
+function App({ Component, pageProps }: AppProps): JSX.Element {
+  return (
+    <ChakraProvider theme={theme}>
+      <Component {...pageProps} />
+    </ChakraProvider>
+  );
 }
 
-export default MyApp
+export default App;

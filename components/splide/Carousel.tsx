@@ -1,29 +1,14 @@
 import React from "react";
-
+import Image from "next/image";
 import Flicking from "@egjs/react-flicking";
 import { AutoPlay } from "@egjs/flicking-plugins";
 import { Box, Stack } from "@chakra-ui/react";
 import { GameType } from "../../types/staem.types";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 interface Props {
   games: Array<GameType>;
 }
-
-const target = {
-  animate: {
-    height: 310,
-    boxShadow: "0px 3px 50px 2px rgba(0, 0, 0, 0.12)",
-  },
-};
-
-const notTarget = {
-  animate: {
-    height: 250,
-    boxShadow: "",
-  },
-};
 
 const Carousel: React.FC<Props> = (props) => {
   const { games } = props;

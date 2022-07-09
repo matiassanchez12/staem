@@ -47,11 +47,6 @@
   justify-content: center !important;
 }
 
-.active-slide:nth-child(2) {
-  background-color: red;
-  width: 1000px !important;
-}
-
 .active-slide-responsive {
   flex: 1 1 auto;
   display: flex;

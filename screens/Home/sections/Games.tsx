@@ -1,5 +1,5 @@
 import React from "react";
-import { Stack } from "@chakra-ui/react";
+import { Stack, Text } from "@chakra-ui/react";
 import { GameType } from "../../../types/staem.types";
 import Card from "../../../components/card/Card";
 import Section from "../../../components/section/Section";
@@ -24,7 +24,13 @@ const Games: React.FC<Props> = (props) => {
   React.useEffect(() => {
     setItems(games.slice(0, 5));
   }, [games]);
-
+  if (games.length === 0) {
+    return (
+      <Stack align="center">
+        <Text>We dont found games :(</Text>
+      </Stack>
+    );
+  }
   return (
     <Section paddingY={8}>
       <InfiniteScroll
@@ -34,7 +40,7 @@ const Games: React.FC<Props> = (props) => {
         hasMore={true}
         loader={
           <Stack height="100px" justifyContent="center" alignItems="center">
-            {games.length < 5 ? null : <Loader />}
+            {games.length === items.length ? null : <Loader />}
           </Stack>
         }
       >

@@ -33,27 +33,17 @@ const Presentation: React.FC<Props> = (props) => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const { isOpen, onClose, onOpen } = useDisclosure();
   const refcarro = React.useRef(null);
-  const firstSlidesActive = refcarro.current?.listRef?.current?.childNodes;
 
   React.useEffect(() => {
-    onOpen();
-
-    if (firstSlidesActive && (screen === "tablet" || screen === "mobile")) {
-      firstSlidesActive.item(2).setAttribute("class", "image-item active-slide-responsive");
-      onOpen();
+    const firstSlidesActive = refcarro.current?.listRef?.current?.childNodes;
+    if (firstSlidesActive.length > 5 && (screen === "tablet" || screen === "mobile")) {
+      refcarro.current.goToSlide(0);
     }
 
-    if (firstSlidesActive) {
-      firstSlidesActive
-        .item(5)
-        .setAttribute("class", "react-multi-carousel-item react-multi-carousel-item--active image-item image-start");
-      firstSlidesActive.item(6).setAttribute("class", "active-slide");
-      firstSlidesActive
-        .item(7)
-        .setAttribute("class", "react-multi-carousel-item react-multi-carousel-item--active image-item image-end");
-      onOpen();
+    if (firstSlidesActive.length > 5) {
+      refcarro.current.goToSlide(0);
     }
-  }, [firstSlidesActive]);
+  }, [refcarro.current]);
 
   React.useEffect(() => {
     const slides = document.querySelectorAll('li[aria-hidden="false"]');
@@ -77,8 +67,8 @@ const Presentation: React.FC<Props> = (props) => {
       ssr
       infinite
       ref={refcarro}
-      partialVisible={true}
       minimumTouchDrag={20}
+      pauseOnHover
       autoPlay
       autoPlaySpeed={6000}
       containerClass="container-carousel"

@@ -36,13 +36,14 @@ const Presentation: React.FC<Props> = (props) => {
   const firstSlidesActive = refcarro.current?.listRef?.current?.childNodes;
 
   React.useEffect(() => {
+    onOpen();
+
     if (firstSlidesActive && (screen === "tablet" || screen === "mobile")) {
       firstSlidesActive.item(2).setAttribute("class", "image-item active-slide-responsive");
       onOpen();
     }
 
     if (firstSlidesActive) {
-      console.log("second");
       firstSlidesActive
         .item(5)
         .setAttribute("class", "react-multi-carousel-item react-multi-carousel-item--active image-item image-start");
@@ -52,7 +53,6 @@ const Presentation: React.FC<Props> = (props) => {
         .setAttribute("class", "react-multi-carousel-item react-multi-carousel-item--active image-item image-end");
       onOpen();
     }
-    console.log("first");
   }, [firstSlidesActive]);
 
   React.useEffect(() => {

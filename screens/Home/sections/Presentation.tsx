@@ -42,6 +42,7 @@ const Presentation: React.FC<Props> = (props) => {
     }
 
     if (firstSlidesActive) {
+      console.log("second");
       firstSlidesActive
         .item(5)
         .setAttribute("class", "react-multi-carousel-item react-multi-carousel-item--active image-item image-start");
@@ -51,6 +52,7 @@ const Presentation: React.FC<Props> = (props) => {
         .setAttribute("class", "react-multi-carousel-item react-multi-carousel-item--active image-item image-end");
       onOpen();
     }
+    console.log("first");
   }, [firstSlidesActive]);
 
   React.useEffect(() => {

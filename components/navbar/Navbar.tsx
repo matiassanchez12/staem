@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box as="nav" height={20} bg="#243347" position={"sticky"} top={0} width="full" zIndex={"modal"}>
+    <Box as="nav" height={20} top={0} width="full" zIndex={"modal"}>
       <Container height="full" maxW="container.xl" paddingInline={16}>
         <Flex alignItems="center" height="full" justifyContent="space-between">
           <Link href="/">

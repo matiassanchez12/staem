@@ -90,7 +90,7 @@ const Filters: React.FC<Props> = (props) => {
           <Select
             value={sortBy}
             onChange={handleChangeSortBy}
-            placeholder="Select"
+            placeholder="All games"
             variant="filled"
             flex={1}
             _focusVisible={{}}

@@ -37,7 +37,7 @@ const Carousel: React.FC<Props> = (props) => {
                 }
               : {
                   animate: {
-                    height: 200,
+                    height: 180,
                     boxShadow: "",
                   },
                 })}
@@ -47,6 +47,7 @@ const Carousel: React.FC<Props> = (props) => {
             <Image
               src={item.image}
               alt={item.title}
+              draggable={false}
               layout="fill"
               objectFit="fill"
               objectPosition="center"

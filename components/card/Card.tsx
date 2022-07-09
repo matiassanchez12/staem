@@ -54,7 +54,7 @@ const Card: React.FC<GameType> = (props) => {
           paddingX={8}
           direction={{ base: "row", md: "column" }}
         >
-          <Stack alignItems="end" paddingTop={4}>
+          <Stack alignItems="end" paddingTop={4} direction={{ base: "row", md: "column" }}>
             {platforms.map((platform, index) => {
               if (platform === "Windows") {
                 return <FaWindows key={index} color="#214B6B" size={48} />;

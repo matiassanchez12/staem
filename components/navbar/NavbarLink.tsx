@@ -12,7 +12,7 @@ const NavbarLink: React.FC<NavbarLinkProps> = (props) => {
   const { href, label } = props;
 
   return (
-    <Link href={href} target="_blank" _hover={{}}>
+    <Link href={href} target="_blank" _hover={{}} _focusVisible={{}}>
       <Text as="span" cursor="pointer" fontWeight={600}>
         {label}
       </Text>

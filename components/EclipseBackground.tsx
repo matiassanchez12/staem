@@ -1,19 +1,21 @@
 import React from "react";
-import { Box } from "@chakra-ui/react";
+import { Box, Container, Stack } from "@chakra-ui/react";
+import Section from "./section/Section";
 
 const EclipseBackground: React.FC = () => {
   return (
-    <Box
-      position="absolute"
-      left="296px"
-      top="189px"
-      w="867px"
-      h="346px"
-      maxW="100%"
-      borderRadius="full"
-      filter="blur(370px)"
-      backgroundColor="#4D6E95"
-    ></Box>
+    <Stack justifyContent="center" alignItems="center" position="relative" bottom={{ base: "25rem", md: "35rem" }}>
+      <Box
+        position="absolute"
+        w="867px"
+        h="346px"
+        overflow="hidden"
+        maxW="100%"
+        borderRadius="full"
+        filter="blur(370px)"
+        backgroundColor="#4D6E95"
+      ></Box>
+    </Stack>
   );
 };
 

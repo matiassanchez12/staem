@@ -38,6 +38,7 @@ const Presentation: React.FC<Props> = (props) => {
   React.useEffect(() => {
     if (firstSlidesActive && (screen === "tablet" || screen === "mobile")) {
       firstSlidesActive.item(2).setAttribute("class", "image-item active-slide-responsive");
+      onOpen();
     }
 
     if (firstSlidesActive) {

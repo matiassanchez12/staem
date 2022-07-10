@@ -37,11 +37,11 @@ const Presentation: React.FC<Props> = (props) => {
   React.useEffect(() => {
     const firstSlidesActive = refcarro.current?.listRef?.current?.childNodes;
     if (firstSlidesActive.length > 5 && (screen === "tablet" || screen === "mobile")) {
-      refcarro.current.goToSlide(0);
+      refcarro.current.goToSlide(7);
     }
 
     if (firstSlidesActive.length > 5) {
-      refcarro.current.goToSlide(0);
+      refcarro.current.goToSlide(5);
     }
   }, [refcarro.current]);
 
@@ -69,8 +69,8 @@ const Presentation: React.FC<Props> = (props) => {
       ref={refcarro}
       minimumTouchDrag={20}
       pauseOnHover
-      autoPlay
-      autoPlaySpeed={6000}
+      // autoPlay
+      // autoPlaySpeed={6000}
       containerClass="container-carousel"
       dotListClass="custom-dot-list-style"
       removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}

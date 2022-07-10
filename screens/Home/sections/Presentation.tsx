@@ -69,8 +69,8 @@ const Presentation: React.FC<Props> = (props) => {
       ref={refcarro}
       minimumTouchDrag={20}
       pauseOnHover
-      // autoPlay
-      // autoPlaySpeed={6000}
+      autoPlay
+      autoPlaySpeed={6000}
       containerClass="container-carousel"
       dotListClass="custom-dot-list-style"
       removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
